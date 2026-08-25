@@ -409,6 +409,7 @@ function startOral(d,box){
 /* ================= ⑤ 听力训练 ================= */
 function listenMod(v){
   const types=[...new Set(M.listening.map(x=>x.type))];
+  let curType=null;
   const wrap=document.createElement('div');
   wrap.innerHTML=`<div class="topbar"><div><h2>⑤ 听力训练</h2>
     <div class="sub">短对话 / 独白 / 听选 ｜ 听后任务（辨音·填空·问答·选择）</div></div></div>
@@ -420,7 +421,6 @@ function listenMod(v){
   const banner=$('#audioBanner5'); if(banner){ const vb=myVoice(); banner.className='abanner '+(vb?'ok':'warn'); banner.innerHTML=vb?'✅ 支持缅甸语发音，可逐句/全文听读。':'⚠ 未检测到缅甸语音包；罗马音对照可用。'; }
   const tp=$('#typePick'); const allT=mkType('全部',null); tp.appendChild(allT);
   types.forEach(t=>tp.appendChild(mkType(t,t)));
-  let curType=null;
   function mkType(label,val){ const b=document.createElement('button'); b.className='btn btn-line btn-sm'+(val===curType?' btn-primary':''); b.textContent=label;
     b.onclick=()=>{ curType=val; $$('#typePick button').forEach(x=>x.classList.remove('btn-primary')); b.classList.add('btn-primary'); drawPick(); }; return b; }
   function drawPick(){
