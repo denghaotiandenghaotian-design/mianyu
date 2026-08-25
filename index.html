@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>缅甸语学习辅助系统 · 深化版</title>
+  <link rel="preload" as="font" href="NotoSansMyanmar-Regular.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="side">
+      <h1>ျမန္မာစာ</h1>
+      <div class="ver">缅甸语学习辅助系统 v2.1 · 含 AI 对话(自带密钥)</div>
+      <nav class="nav" id="nav"></nav>
+      <div class="faint" style="margin-top:var(--s5);font-size:11px;line-height:1.7">
+        数据存本机浏览器（localStorage），无需登录、不上传服务器。换设备请用导出/导入同步。
+      </div>
+    </aside>
+    <main class="main">
+      <div id="view"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
